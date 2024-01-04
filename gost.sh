@@ -895,30 +895,30 @@ update_sh() {
 }
 
 update_sh
-echo && echo -e "                 gost 一键安装配置脚本"${Red_font_prefix}[${shell_version}]${Font_color_suffix}"
+echo && echo -e "                 gost One-click installation configuration script"${Red_font_prefix}[${shell_version}]${Font_color_suffix}"
   ----------- KANIKIG -----------
-  特性: (1)本脚本采用systemd及gost配置文件对gost进行管理
-        (2)能够在不借助其他工具(如screen)的情况下实现多条转发规则同时生效
-        (3)机器reboot后转发不失效
-  功能: (1)tcp+udp不加密转发, (2)中转机加密转发, (3)落地机解密对接转发
-  帮助文档：https://github.com/KANIKIG/Multi-EasyGost
+  Features: (1) This script uses systemd and gost configuration files to manage gost
+        (2) Able to realize multiple forwarding rules taking effect at the same time without using other tools (such as screen)
+        (3) Forwarding does not fail after the machine reboots
+  Functions: (1) tcp+udp unencrypted forwarding, (2) transit machine encrypted forwarding, (3) landing machine decryption and docking forwarding
+  Help documentation：https://github.com/KANIKIG/Multi-EasyGost
 
  ${Green_font_prefix}1.${Font_color_suffix} install gost
  ${Green_font_prefix}2.${Font_color_suffix} renew gost
- ${Green_font_prefix}3.${Font_color_suffix} 卸载 gost
+ ${Green_font_prefix}3.${Font_color_suffix} uninstall gost
 ————————————
- ${Green_font_prefix}4.${Font_color_suffix} 启动 gost
- ${Green_font_prefix}5.${Font_color_suffix} 停止 gost
- ${Green_font_prefix}6.${Font_color_suffix} 重启 gost
+ ${Green_font_prefix}4.${Font_color_suffix} start up gost
+ ${Green_font_prefix}5.${Font_color_suffix} stop gost
+ ${Green_font_prefix}6.${Font_color_suffix} Restart gost
 ————————————
- ${Green_font_prefix}7.${Font_color_suffix} 新增gost转发配置
- ${Green_font_prefix}8.${Font_color_suffix} 查看现有gost配置
- ${Green_font_prefix}9.${Font_color_suffix} 删除一则gost配置
+ ${Green_font_prefix}7.${Font_color_suffix} Added gost forwarding configuration
+ ${Green_font_prefix}8.${Font_color_suffix} View existing gost configuration
+ ${Green_font_prefix}9.${Font_color_suffix} Delete a gost configuration
 ————————————
- ${Green_font_prefix}10.${Font_color_suffix} gost定时重启配置
- ${Green_font_prefix}11.${Font_color_suffix} 自定义TLS证书配置
+ ${Green_font_prefix}10.${Font_color_suffix} gost scheduled restart configuration
+ ${Green_font_prefix}11.${Font_color_suffix} Custom TLS certificate configuration
 ————————————" && echo
-read -e -p " 请输入数字 [1-9]:" num
+read -e -p " Please enter the number [1-9]:" num
 case "$num" in
 1)
   Install_ct
@@ -945,7 +945,7 @@ case "$num" in
   writeconf
   conflast
   systemctl restart gost
-  echo -e "配置已生效，当前配置如下"
+  echo -e "The configuration has taken effect. The current configuration is as follows"
   echo -e "--------------------------------------------------------"
   show_all_conf
   ;;
@@ -954,7 +954,7 @@ case "$num" in
   ;;
 9)
   show_all_conf
-  read -p "请输入你要删除的配置编号：" numdelete
+  read -p "Please enter the configuration number you want to delete：" numdelete
   if echo $numdelete | grep -q '[0-9]'; then
     sed -i "${numdelete}d" $raw_conf_path
     rm -rf /etc/gost/config.json
@@ -962,9 +962,9 @@ case "$num" in
     writeconf
     conflast
     systemctl restart gost
-    echo -e "配置已删除，服务已重启"
+    echo -e "The configuration has been deleted and the service has been restarted"
   else
-    echo "请输入正确数字"
+    echo "Please enter the correct number"
   fi
   ;;
 10)
@@ -974,6 +974,6 @@ case "$num" in
   cert
   ;;
 *)
-  echo "请输入正确数字 [1-9]"
+  echo "please enter the correct number [1-9]"
   ;;
 esac
