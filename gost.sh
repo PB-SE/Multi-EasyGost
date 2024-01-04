@@ -903,8 +903,8 @@ echo && echo -e "                 gost 一键安装配置脚本"${Red_font_prefi
   功能: (1)tcp+udp不加密转发, (2)中转机加密转发, (3)落地机解密对接转发
   帮助文档：https://github.com/KANIKIG/Multi-EasyGost
 
- ${Green_font_prefix}1.${Font_color_suffix} 安装 gost
- ${Green_font_prefix}2.${Font_color_suffix} 更新 gost
+ ${Green_font_prefix}1.${Font_color_suffix} install gost
+ ${Green_font_prefix}2.${Font_color_suffix} renew gost
  ${Green_font_prefix}3.${Font_color_suffix} 卸载 gost
 ————————————
  ${Green_font_prefix}4.${Font_color_suffix} 启动 gost
