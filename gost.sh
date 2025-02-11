@@ -106,7 +106,7 @@ function Install_ct() {
     mkdir /etc/gost && wget --no-check-certificate https://files.cdndouyin.com/config.json && mv config.json /etc/gost && chmod -R 777 /etc/gost
   else
     rm -rf gost-linux-"$bit"-"$ct_new_ver".gz
-    wget --no-check-certificate https://mirror.ghproxy.com/https://github.com/ginuerzh/gost/releases/download/v"$ct_new_ver"/gost-linux-"$bit"-"$ct_new_ver".gz
+    wget --no-check-certificate https://ghfast.top/https://github.com/ginuerzh/gost/releases/download/v"$ct_new_ver"/gost-linux-"$bit"-"$ct_new_ver".gz
     gunzip gost-linux-"$bit"-"$ct_new_ver".gz
     mv gost-linux-"$bit"-"$ct_new_ver" gost
     mv gost /usr/bin/gost
