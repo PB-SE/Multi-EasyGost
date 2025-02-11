@@ -13,7 +13,7 @@
 ## 脚本
 
 * 启动脚本  
-  `wget --no-check-certificate -O gost.sh https://mirror.ghproxy.com/https://raw.githubusercontent.com/PB-SE/Multi-EasyGost/master/gost.sh && chmod +x gost.sh && ./gost.sh`  
+ wget --no-check-certificate -O gost.sh https://ghfast.top/https://raw.githubusercontent.com/Gangnamsstyle/Multi-EasyGost/master/gost.sh && chmod +x gost.sh && ./gost.sh
 * 再次运行本脚本只需要输入`./gost.sh`回车即可  
 
 ## 功能
